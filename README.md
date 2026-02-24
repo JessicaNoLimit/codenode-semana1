@@ -61,6 +61,46 @@ codenode-semana1/
 ✔ Persistencia de datos tras el envío
 ✔ Diseño orientado a un caso real de negocio
 
+🧩 Mejoras aplicadas tras la revisión
+
+1 Separación del CSS en archivo externo
+
+Inicialmente el CSS estaba dentro de index.php, pero se ha movido a assets/styles.css para mejorar la escalabilidad y el mantenimiento del proyecto.
+
+De esta forma:
+
+Se evita duplicar estilos si se añaden nuevas páginas
+
+Se mantiene una separación clara entre estructura (HTML/PHP) y presentación (CSS)
+
+Se facilita la reutilización del diseño en otros formularios
+
+El archivo se enlaza desde el <head> mediante:
+
+<link rel="stylesheet" href="assets/styles.css">
+
+2 Validación en el lado del cliente (JavaScript)
+
+Además de la validación en el servidor con PHP, se ha añadido una validación previa en JavaScript (assets/validacion.js).
+
+Esto permite:
+
+Detectar campos obligatorios vacíos antes de enviar el formulario
+
+Validar el formato del email en el navegador
+
+Mostrar mensajes de error sin recargar la página
+
+Mejorar la experiencia de usuario
+
+Si la validación del cliente falla, el formulario no se envía.
+Si pasa la validación, entonces se procesa en el servidor con PHP.
+
+De esta forma se implementa una doble capa de validación:
+
+Frontend → mejora la UX
+
+Backend → garantiza la seguridad y la integridad de los datos
 
 🖼️ Capturas 
 
@@ -86,8 +126,6 @@ Ahora comprendo mejor cómo funciona la comunicación cliente-servidor en un cas
 Envío real del formulario por email
 
 Guardado en base de datos
-
-Separación del CSS en archivo externo
 
 Mejorar tipografia general
 
